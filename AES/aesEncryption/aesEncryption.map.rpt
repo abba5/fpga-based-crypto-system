@@ -1,0 +1,843 @@
+Analysis & Synthesis report for aesEncryption
+Fri Feb 15 18:47:45 2019
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k10"
+ 10. Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k9"
+ 11. Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k8"
+ 12. Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k7"
+ 13. Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k6"
+ 14. Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k5"
+ 15. Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k4"
+ 16. Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k3"
+ 17. Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k2"
+ 18. Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k1"
+ 19. Port Connectivity Checks: "aesCipher:u1"
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                          ;
++-----------------------------+-----------------------------------------+
+; Analysis & Synthesis Status ; Successful - Fri Feb 15 18:47:45 2019   ;
+; Quartus II Version          ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
+; Revision Name               ; aesEncryption                           ;
+; Top-level Entity Name       ; aesEncryption                           ;
+; Family                      ; Cyclone                                 ;
+; Total logic elements        ; 0                                       ;
+; Total pins                  ; 129                                     ;
+; Total virtual pins          ; 0                                       ;
+; Total memory bits           ; 0                                       ;
+; Total PLLs                  ; 0                                       ;
++-----------------------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP1C12Q240C8       ;                    ;
+; Top-level entity name                                                      ; aesEncryption      ; aesEncryption      ;
+; Family name                                                                ; Cyclone            ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                              ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                    ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------+
+; module/aesCipher.v               ; yes             ; User Verilog HDL File        ; C:/Users/Abbas/Desktop/AES/aesEncryption/module/aesCipher.v     ;
+; module/aesEncryption.v           ; yes             ; User Verilog HDL File        ; C:/Users/Abbas/Desktop/AES/aesEncryption/module/aesEncryption.v ;
+; module/keyGeneration.v           ; yes             ; User Verilog HDL File        ; C:/Users/Abbas/Desktop/AES/aesEncryption/module/keyGeneration.v ;
+; module/mixColumn.v               ; yes             ; User Verilog HDL File        ; C:/Users/Abbas/Desktop/AES/aesEncryption/module/mixColumn.v     ;
+; module/rounds.v                  ; yes             ; User Verilog HDL File        ; C:/Users/Abbas/Desktop/AES/aesEncryption/module/rounds.v        ;
+; module/rounndlast.v              ; yes             ; User Verilog HDL File        ; C:/Users/Abbas/Desktop/AES/aesEncryption/module/rounndlast.v    ;
+; module/sBox.v                    ; yes             ; User Verilog HDL File        ; C:/Users/Abbas/Desktop/AES/aesEncryption/module/sBox.v          ;
+; module/shiftRow.v                ; yes             ; User Verilog HDL File        ; C:/Users/Abbas/Desktop/AES/aesEncryption/module/shiftRow.v      ;
+; aesencryption.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/Abbas/Desktop/AES/aesEncryption/aesencryption.v        ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 0     ;
+;     -- Combinational with no register       ; 0     ;
+;     -- Register only                        ; 0     ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- 2 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+; I/O pins                                    ; 129   ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                   ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |aesEncryption             ; 0 (0)       ; 0            ; 0           ; 129  ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |aesEncryption      ; work         ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k10" ;
++----------+-------+----------+------------------------------+
+; Port     ; Type  ; Severity ; Details                      ;
++----------+-------+----------+------------------------------+
+; rc[2..1] ; Input ; Info     ; Stuck at GND                 ;
+; rc[3]    ; Input ; Info     ; Stuck at VCC                 ;
+; rc[0]    ; Input ; Info     ; Stuck at VCC                 ;
++----------+-------+----------+------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k9" ;
++----------+-------+----------+-----------------------------+
+; Port     ; Type  ; Severity ; Details                     ;
++----------+-------+----------+-----------------------------+
+; rc[2..0] ; Input ; Info     ; Stuck at GND                ;
+; rc[3]    ; Input ; Info     ; Stuck at VCC                ;
++----------+-------+----------+-----------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k8" ;
++----------+-------+----------+-----------------------------+
+; Port     ; Type  ; Severity ; Details                     ;
++----------+-------+----------+-----------------------------+
+; rc[2..0] ; Input ; Info     ; Stuck at VCC                ;
+; rc[3]    ; Input ; Info     ; Stuck at GND                ;
++----------+-------+----------+-----------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k7" ;
++----------+-------+----------+-----------------------------+
+; Port     ; Type  ; Severity ; Details                     ;
++----------+-------+----------+-----------------------------+
+; rc[2..1] ; Input ; Info     ; Stuck at VCC                ;
+; rc[3]    ; Input ; Info     ; Stuck at GND                ;
+; rc[0]    ; Input ; Info     ; Stuck at GND                ;
++----------+-------+----------+-----------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k6" ;
++-------+-------+----------+--------------------------------+
+; Port  ; Type  ; Severity ; Details                        ;
++-------+-------+----------+--------------------------------+
+; rc[3] ; Input ; Info     ; Stuck at GND                   ;
+; rc[2] ; Input ; Info     ; Stuck at VCC                   ;
+; rc[1] ; Input ; Info     ; Stuck at GND                   ;
+; rc[0] ; Input ; Info     ; Stuck at VCC                   ;
++-------+-------+----------+--------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k5" ;
++----------+-------+----------+-----------------------------+
+; Port     ; Type  ; Severity ; Details                     ;
++----------+-------+----------+-----------------------------+
+; rc[1..0] ; Input ; Info     ; Stuck at GND                ;
+; rc[3]    ; Input ; Info     ; Stuck at GND                ;
+; rc[2]    ; Input ; Info     ; Stuck at VCC                ;
++----------+-------+----------+-----------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k4" ;
++----------+-------+----------+-----------------------------+
+; Port     ; Type  ; Severity ; Details                     ;
++----------+-------+----------+-----------------------------+
+; rc[1..0] ; Input ; Info     ; Stuck at VCC                ;
+; rc[3..2] ; Input ; Info     ; Stuck at GND                ;
++----------+-------+----------+-----------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k3" ;
++----------+-------+----------+-----------------------------+
+; Port     ; Type  ; Severity ; Details                     ;
++----------+-------+----------+-----------------------------+
+; rc[3..2] ; Input ; Info     ; Stuck at GND                ;
+; rc[1]    ; Input ; Info     ; Stuck at VCC                ;
+; rc[0]    ; Input ; Info     ; Stuck at GND                ;
++----------+-------+----------+-----------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k2" ;
++----------+-------+----------+-----------------------------+
+; Port     ; Type  ; Severity ; Details                     ;
++----------+-------+----------+-----------------------------+
+; rc[3..1] ; Input ; Info     ; Stuck at GND                ;
+; rc[0]    ; Input ; Info     ; Stuck at VCC                ;
++----------+-------+----------+-----------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "aesCipher:u1|KeyGeneration:k1" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; rc   ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "aesCipher:u1"           ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; datain[113..112] ; Input ; Info     ; Stuck at VCC ;
+; datain[102..101] ; Input ; Info     ; Stuck at VCC ;
+; datain[98..95]   ; Input ; Info     ; Stuck at VCC ;
+; datain[88..87]   ; Input ; Info     ; Stuck at VCC ;
+; datain[81..78]   ; Input ; Info     ; Stuck at VCC ;
+; datain[75..74]   ; Input ; Info     ; Stuck at VCC ;
+; datain[72..69]   ; Input ; Info     ; Stuck at VCC ;
+; datain[67..57]   ; Input ; Info     ; Stuck at VCC ;
+; datain[55..54]   ; Input ; Info     ; Stuck at VCC ;
+; datain[52..50]   ; Input ; Info     ; Stuck at VCC ;
+; datain[45..43]   ; Input ; Info     ; Stuck at VCC ;
+; datain[36..35]   ; Input ; Info     ; Stuck at VCC ;
+; datain[30..28]   ; Input ; Info     ; Stuck at VCC ;
+; datain[26..25]   ; Input ; Info     ; Stuck at VCC ;
+; datain[13..12]   ; Input ; Info     ; Stuck at VCC ;
+; datain[127..121] ; Input ; Info     ; Stuck at GND ;
+; datain[119..118] ; Input ; Info     ; Stuck at GND ;
+; datain[116..114] ; Input ; Info     ; Stuck at GND ;
+; datain[109..107] ; Input ; Info     ; Stuck at GND ;
+; datain[100..99]  ; Input ; Info     ; Stuck at GND ;
+; datain[94..92]   ; Input ; Info     ; Stuck at GND ;
+; datain[90..89]   ; Input ; Info     ; Stuck at GND ;
+; datain[77..76]   ; Input ; Info     ; Stuck at GND ;
+; datain[49..48]   ; Input ; Info     ; Stuck at GND ;
+; datain[38..37]   ; Input ; Info     ; Stuck at GND ;
+; datain[34..31]   ; Input ; Info     ; Stuck at GND ;
+; datain[24..23]   ; Input ; Info     ; Stuck at GND ;
+; datain[17..14]   ; Input ; Info     ; Stuck at GND ;
+; datain[11..10]   ; Input ; Info     ; Stuck at GND ;
+; datain[8..5]     ; Input ; Info     ; Stuck at GND ;
+; datain[3..0]     ; Input ; Info     ; Stuck at GND ;
+; datain[120]      ; Input ; Info     ; Stuck at VCC ;
+; datain[117]      ; Input ; Info     ; Stuck at VCC ;
+; datain[111]      ; Input ; Info     ; Stuck at GND ;
+; datain[110]      ; Input ; Info     ; Stuck at VCC ;
+; datain[106]      ; Input ; Info     ; Stuck at VCC ;
+; datain[105]      ; Input ; Info     ; Stuck at GND ;
+; datain[104]      ; Input ; Info     ; Stuck at VCC ;
+; datain[103]      ; Input ; Info     ; Stuck at GND ;
+; datain[91]       ; Input ; Info     ; Stuck at VCC ;
+; datain[86]       ; Input ; Info     ; Stuck at GND ;
+; datain[85]       ; Input ; Info     ; Stuck at VCC ;
+; datain[84]       ; Input ; Info     ; Stuck at GND ;
+; datain[83]       ; Input ; Info     ; Stuck at VCC ;
+; datain[82]       ; Input ; Info     ; Stuck at GND ;
+; datain[73]       ; Input ; Info     ; Stuck at GND ;
+; datain[68]       ; Input ; Info     ; Stuck at GND ;
+; datain[56]       ; Input ; Info     ; Stuck at GND ;
+; datain[53]       ; Input ; Info     ; Stuck at GND ;
+; datain[47]       ; Input ; Info     ; Stuck at VCC ;
+; datain[46]       ; Input ; Info     ; Stuck at GND ;
+; datain[42]       ; Input ; Info     ; Stuck at GND ;
+; datain[41]       ; Input ; Info     ; Stuck at VCC ;
+; datain[40]       ; Input ; Info     ; Stuck at GND ;
+; datain[39]       ; Input ; Info     ; Stuck at VCC ;
+; datain[27]       ; Input ; Info     ; Stuck at GND ;
+; datain[22]       ; Input ; Info     ; Stuck at VCC ;
+; datain[21]       ; Input ; Info     ; Stuck at GND ;
+; datain[20]       ; Input ; Info     ; Stuck at VCC ;
+; datain[19]       ; Input ; Info     ; Stuck at GND ;
+; datain[18]       ; Input ; Info     ; Stuck at VCC ;
+; datain[9]        ; Input ; Info     ; Stuck at VCC ;
+; datain[4]        ; Input ; Info     ; Stuck at VCC ;
+; key[123..120]    ; Input ; Info     ; Stuck at VCC ;
+; key[110..108]    ; Input ; Info     ; Stuck at VCC ;
+; key[104..102]    ; Input ; Info     ; Stuck at VCC ;
+; key[90..86]      ; Input ; Info     ; Stuck at VCC ;
+; key[84..83]      ; Input ; Info     ; Stuck at VCC ;
+; key[80..77]      ; Input ; Info     ; Stuck at VCC ;
+; key[68..67]      ; Input ; Info     ; Stuck at VCC ;
+; key[59..58]      ; Input ; Info     ; Stuck at VCC ;
+; key[53..52]      ; Input ; Info     ; Stuck at VCC ;
+; key[50..47]      ; Input ; Info     ; Stuck at VCC ;
+; key[43..42]      ; Input ; Info     ; Stuck at VCC ;
+; key[40..38]      ; Input ; Info     ; Stuck at VCC ;
+; key[34..33]      ; Input ; Info     ; Stuck at VCC ;
+; key[27..24]      ; Input ; Info     ; Stuck at VCC ;
+; key[22..16]      ; Input ; Info     ; Stuck at VCC ;
+; key[14..13]      ; Input ; Info     ; Stuck at VCC ;
+; key[10..7]       ; Input ; Info     ; Stuck at VCC ;
+; key[4..3]        ; Input ; Info     ; Stuck at VCC ;
+; key[127..124]    ; Input ; Info     ; Stuck at GND ;
+; key[119..117]    ; Input ; Info     ; Stuck at GND ;
+; key[107..105]    ; Input ; Info     ; Stuck at GND ;
+; key[101..100]    ; Input ; Info     ; Stuck at GND ;
+; key[98..97]      ; Input ; Info     ; Stuck at GND ;
+; key[93..91]      ; Input ; Info     ; Stuck at GND ;
+; key[82..81]      ; Input ; Info     ; Stuck at GND ;
+; key[74..71]      ; Input ; Info     ; Stuck at GND ;
+; key[66..65]      ; Input ; Info     ; Stuck at GND ;
+; key[63..60]      ; Input ; Info     ; Stuck at GND ;
+; key[57..56]      ; Input ; Info     ; Stuck at GND ;
+; key[12..11]      ; Input ; Info     ; Stuck at GND ;
+; key[6..5]        ; Input ; Info     ; Stuck at GND ;
+; key[2..0]        ; Input ; Info     ; Stuck at GND ;
+; key[116]         ; Input ; Info     ; Stuck at VCC ;
+; key[115]         ; Input ; Info     ; Stuck at GND ;
+; key[114]         ; Input ; Info     ; Stuck at VCC ;
+; key[113]         ; Input ; Info     ; Stuck at GND ;
+; key[112]         ; Input ; Info     ; Stuck at VCC ;
+; key[111]         ; Input ; Info     ; Stuck at GND ;
+; key[99]          ; Input ; Info     ; Stuck at VCC ;
+; key[96]          ; Input ; Info     ; Stuck at VCC ;
+; key[95]          ; Input ; Info     ; Stuck at GND ;
+; key[94]          ; Input ; Info     ; Stuck at VCC ;
+; key[85]          ; Input ; Info     ; Stuck at GND ;
+; key[76]          ; Input ; Info     ; Stuck at GND ;
+; key[75]          ; Input ; Info     ; Stuck at VCC ;
+; key[70]          ; Input ; Info     ; Stuck at VCC ;
+; key[69]          ; Input ; Info     ; Stuck at GND ;
+; key[64]          ; Input ; Info     ; Stuck at VCC ;
+; key[55]          ; Input ; Info     ; Stuck at VCC ;
+; key[54]          ; Input ; Info     ; Stuck at GND ;
+; key[51]          ; Input ; Info     ; Stuck at GND ;
+; key[46]          ; Input ; Info     ; Stuck at GND ;
+; key[45]          ; Input ; Info     ; Stuck at VCC ;
+; key[44]          ; Input ; Info     ; Stuck at GND ;
+; key[41]          ; Input ; Info     ; Stuck at GND ;
+; key[37]          ; Input ; Info     ; Stuck at GND ;
+; key[36]          ; Input ; Info     ; Stuck at VCC ;
+; key[35]          ; Input ; Info     ; Stuck at GND ;
+; key[32]          ; Input ; Info     ; Stuck at GND ;
+; key[31]          ; Input ; Info     ; Stuck at VCC ;
+; key[30]          ; Input ; Info     ; Stuck at GND ;
+; key[29]          ; Input ; Info     ; Stuck at VCC ;
+; key[28]          ; Input ; Info     ; Stuck at GND ;
+; key[23]          ; Input ; Info     ; Stuck at GND ;
+; key[15]          ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Fri Feb 15 18:47:40 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off aesEncryption -c aesEncryption
+Info: Found 1 design units, including 1 entities, in source file module/aescipher.v
+    Info: Found entity 1: aesCipher
+Info: Found 1 design units, including 1 entities, in source file module/aesencryption.v
+    Info: Found entity 1: subBytes
+Info: Found 1 design units, including 1 entities, in source file module/keygeneration.v
+    Info: Found entity 1: KeyGeneration
+Info: Found 1 design units, including 1 entities, in source file module/mixcolumn.v
+    Info: Found entity 1: mixColumn
+Info: Found 1 design units, including 1 entities, in source file module/rounds.v
+    Info: Found entity 1: rounds
+Info: Found 1 design units, including 1 entities, in source file module/rounndlast.v
+    Info: Found entity 1: rounndlast
+Info: Found 1 design units, including 1 entities, in source file module/sbox.v
+    Info: Found entity 1: sBox
+Info: Found 1 design units, including 1 entities, in source file module/shiftrow.v
+    Info: Found entity 1: shiftRow
+Warning: Using design file aesencryption.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: aesEncryption
+Info: Elaborating entity "aesEncryption" for the top level hierarchy
+Info: Elaborating entity "aesCipher" for hierarchy "aesCipher:u1"
+Info: Elaborating entity "KeyGeneration" for hierarchy "aesCipher:u1|KeyGeneration:k1"
+Info: Elaborating entity "sBox" for hierarchy "aesCipher:u1|KeyGeneration:k1|sBox:a1"
+Info: Elaborating entity "rounds" for hierarchy "aesCipher:u1|rounds:r1"
+Info: Elaborating entity "subBytes" for hierarchy "aesCipher:u1|rounds:r1|subBytes:t1"
+Info: Elaborating entity "shiftRow" for hierarchy "aesCipher:u1|rounds:r1|shiftRow:t2"
+Info: Elaborating entity "mixColumn" for hierarchy "aesCipher:u1|rounds:r1|mixColumn:t3"
+Info: Elaborating entity "rounndlast" for hierarchy "aesCipher:u1|rounndlast:r10"
+Info: Found 200 instances of uninferred RAM logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k1|sBox:a4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k3|sBox:a4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k2|sBox:a4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k4|sBox:a4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k6|sBox:a4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k8|sBox:a4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k10|sBox:a4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q11|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k1|sBox:a3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k3|sBox:a3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k2|sBox:a3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k4|sBox:a3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k6|sBox:a3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k8|sBox:a3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k10|sBox:a3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q6|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k1|sBox:a2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k3|sBox:a2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k2|sBox:a2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k4|sBox:a2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k6|sBox:a2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k8|sBox:a2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k10|sBox:a2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k1|sBox:a1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k3|sBox:a1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k2|sBox:a1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k4|sBox:a1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k6|sBox:a1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k8|sBox:a1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k10|sBox:a1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q12|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k5|sBox:a4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k7|sBox:a4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k9|sBox:a4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q7|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k5|sBox:a3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k7|sBox:a3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k9|sBox:a3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k5|sBox:a2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k7|sBox:a2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k9|sBox:a2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q13|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k5|sBox:a1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k7|sBox:a1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|KeyGeneration:k9|sBox:a1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q8|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q14|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q9|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q16|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q10|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q5|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q0|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q7|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q8|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q13|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q9|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q14|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q0|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q5|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q10|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q16|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q6|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q11|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r9|subBytes:t1|sBox:q12|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q0|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q5|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q10|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q16|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q9|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q14|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q7|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q8|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q13|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q6|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q11|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r8|subBytes:t1|sBox:q12|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q0|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q5|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q10|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q16|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q9|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q14|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q7|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q8|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q13|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q6|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q11|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r7|subBytes:t1|sBox:q12|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q0|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q5|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q10|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q16|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q9|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q14|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q7|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q8|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q13|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q6|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q11|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r6|subBytes:t1|sBox:q12|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q0|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q5|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q10|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q16|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q9|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q14|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q7|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q8|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q13|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q6|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q11|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r5|subBytes:t1|sBox:q12|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q0|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q5|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q10|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q16|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q9|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q14|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q7|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q8|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q13|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q6|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q11|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r4|subBytes:t1|sBox:q12|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q0|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q5|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q10|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q16|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q9|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q14|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q7|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q8|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q13|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q6|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q11|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r3|subBytes:t1|sBox:q12|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q0|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q5|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q10|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q16|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q9|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q14|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q7|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q8|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q13|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q6|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q11|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r2|subBytes:t1|sBox:q12|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q0|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q5|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q10|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q16|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q3|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q4|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q9|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q14|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q2|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q7|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q8|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q13|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q1|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q6|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q11|Ram0" is uninferred due to asynchronous read logic
+    Info: RAM logic "aesCipher:u1|rounds:r1|subBytes:t1|sBox:q12|Ram0" is uninferred due to asynchronous read logic
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "tempout[0]" is stuck at VCC
+    Warning (13410): Pin "tempout[1]" is stuck at GND
+    Warning (13410): Pin "tempout[2]" is stuck at GND
+    Warning (13410): Pin "tempout[3]" is stuck at VCC
+    Warning (13410): Pin "tempout[4]" is stuck at VCC
+    Warning (13410): Pin "tempout[5]" is stuck at VCC
+    Warning (13410): Pin "tempout[6]" is stuck at GND
+    Warning (13410): Pin "tempout[7]" is stuck at VCC
+    Warning (13410): Pin "tempout[8]" is stuck at VCC
+    Warning (13410): Pin "tempout[9]" is stuck at VCC
+    Warning (13410): Pin "tempout[10]" is stuck at VCC
+    Warning (13410): Pin "tempout[11]" is stuck at VCC
+    Warning (13410): Pin "tempout[12]" is stuck at GND
+    Warning (13410): Pin "tempout[13]" is stuck at GND
+    Warning (13410): Pin "tempout[14]" is stuck at GND
+    Warning (13410): Pin "tempout[15]" is stuck at VCC
+    Warning (13410): Pin "tempout[16]" is stuck at GND
+    Warning (13410): Pin "tempout[17]" is stuck at GND
+    Warning (13410): Pin "tempout[18]" is stuck at VCC
+    Warning (13410): Pin "tempout[19]" is stuck at GND
+    Warning (13410): Pin "tempout[20]" is stuck at VCC
+    Warning (13410): Pin "tempout[21]" is stuck at GND
+    Warning (13410): Pin "tempout[22]" is stuck at GND
+    Warning (13410): Pin "tempout[23]" is stuck at GND
+    Warning (13410): Pin "tempout[24]" is stuck at GND
+    Warning (13410): Pin "tempout[25]" is stuck at GND
+    Warning (13410): Pin "tempout[26]" is stuck at VCC
+    Warning (13410): Pin "tempout[27]" is stuck at GND
+    Warning (13410): Pin "tempout[28]" is stuck at GND
+    Warning (13410): Pin "tempout[29]" is stuck at VCC
+    Warning (13410): Pin "tempout[30]" is stuck at VCC
+    Warning (13410): Pin "tempout[31]" is stuck at GND
+    Warning (13410): Pin "tempout[32]" is stuck at VCC
+    Warning (13410): Pin "tempout[33]" is stuck at VCC
+    Warning (13410): Pin "tempout[34]" is stuck at GND
+    Warning (13410): Pin "tempout[35]" is stuck at GND
+    Warning (13410): Pin "tempout[36]" is stuck at GND
+    Warning (13410): Pin "tempout[37]" is stuck at GND
+    Warning (13410): Pin "tempout[38]" is stuck at VCC
+    Warning (13410): Pin "tempout[39]" is stuck at GND
+    Warning (13410): Pin "tempout[40]" is stuck at VCC
+    Warning (13410): Pin "tempout[41]" is stuck at VCC
+    Warning (13410): Pin "tempout[42]" is stuck at GND
+    Warning (13410): Pin "tempout[43]" is stuck at VCC
+    Warning (13410): Pin "tempout[44]" is stuck at GND
+    Warning (13410): Pin "tempout[45]" is stuck at VCC
+    Warning (13410): Pin "tempout[46]" is stuck at GND
+    Warning (13410): Pin "tempout[47]" is stuck at VCC
+    Warning (13410): Pin "tempout[48]" is stuck at GND
+    Warning (13410): Pin "tempout[49]" is stuck at GND
+    Warning (13410): Pin "tempout[50]" is stuck at VCC
+    Warning (13410): Pin "tempout[51]" is stuck at GND
+    Warning (13410): Pin "tempout[52]" is stuck at VCC
+    Warning (13410): Pin "tempout[53]" is stuck at VCC
+    Warning (13410): Pin "tempout[54]" is stuck at GND
+    Warning (13410): Pin "tempout[55]" is stuck at GND
+    Warning (13410): Pin "tempout[56]" is stuck at VCC
+    Warning (13410): Pin "tempout[57]" is stuck at GND
+    Warning (13410): Pin "tempout[58]" is stuck at GND
+    Warning (13410): Pin "tempout[59]" is stuck at VCC
+    Warning (13410): Pin "tempout[60]" is stuck at GND
+    Warning (13410): Pin "tempout[61]" is stuck at VCC
+    Warning (13410): Pin "tempout[62]" is stuck at VCC
+    Warning (13410): Pin "tempout[63]" is stuck at GND
+    Warning (13410): Pin "tempout[64]" is stuck at GND
+    Warning (13410): Pin "tempout[65]" is stuck at GND
+    Warning (13410): Pin "tempout[66]" is stuck at VCC
+    Warning (13410): Pin "tempout[67]" is stuck at VCC
+    Warning (13410): Pin "tempout[68]" is stuck at VCC
+    Warning (13410): Pin "tempout[69]" is stuck at VCC
+    Warning (13410): Pin "tempout[70]" is stuck at VCC
+    Warning (13410): Pin "tempout[71]" is stuck at GND
+    Warning (13410): Pin "tempout[72]" is stuck at VCC
+    Warning (13410): Pin "tempout[73]" is stuck at VCC
+    Warning (13410): Pin "tempout[74]" is stuck at VCC
+    Warning (13410): Pin "tempout[75]" is stuck at VCC
+    Warning (13410): Pin "tempout[76]" is stuck at VCC
+    Warning (13410): Pin "tempout[77]" is stuck at VCC
+    Warning (13410): Pin "tempout[78]" is stuck at GND
+    Warning (13410): Pin "tempout[79]" is stuck at VCC
+    Warning (13410): Pin "tempout[80]" is stuck at VCC
+    Warning (13410): Pin "tempout[81]" is stuck at VCC
+    Warning (13410): Pin "tempout[82]" is stuck at GND
+    Warning (13410): Pin "tempout[83]" is stuck at GND
+    Warning (13410): Pin "tempout[84]" is stuck at VCC
+    Warning (13410): Pin "tempout[85]" is stuck at GND
+    Warning (13410): Pin "tempout[86]" is stuck at VCC
+    Warning (13410): Pin "tempout[87]" is stuck at GND
+    Warning (13410): Pin "tempout[88]" is stuck at GND
+    Warning (13410): Pin "tempout[89]" is stuck at GND
+    Warning (13410): Pin "tempout[90]" is stuck at GND
+    Warning (13410): Pin "tempout[91]" is stuck at VCC
+    Warning (13410): Pin "tempout[92]" is stuck at GND
+    Warning (13410): Pin "tempout[93]" is stuck at GND
+    Warning (13410): Pin "tempout[94]" is stuck at GND
+    Warning (13410): Pin "tempout[95]" is stuck at GND
+    Warning (13410): Pin "tempout[96]" is stuck at GND
+    Warning (13410): Pin "tempout[97]" is stuck at VCC
+    Warning (13410): Pin "tempout[98]" is stuck at GND
+    Warning (13410): Pin "tempout[99]" is stuck at VCC
+    Warning (13410): Pin "tempout[100]" is stuck at GND
+    Warning (13410): Pin "tempout[101]" is stuck at GND
+    Warning (13410): Pin "tempout[102]" is stuck at VCC
+    Warning (13410): Pin "tempout[103]" is stuck at GND
+    Warning (13410): Pin "tempout[104]" is stuck at GND
+    Warning (13410): Pin "tempout[105]" is stuck at GND
+    Warning (13410): Pin "tempout[106]" is stuck at VCC
+    Warning (13410): Pin "tempout[107]" is stuck at GND
+    Warning (13410): Pin "tempout[108]" is stuck at GND
+    Warning (13410): Pin "tempout[109]" is stuck at GND
+    Warning (13410): Pin "tempout[110]" is stuck at GND
+    Warning (13410): Pin "tempout[111]" is stuck at VCC
+    Warning (13410): Pin "tempout[112]" is stuck at VCC
+    Warning (13410): Pin "tempout[113]" is stuck at VCC
+    Warning (13410): Pin "tempout[114]" is stuck at GND
+    Warning (13410): Pin "tempout[115]" is stuck at VCC
+    Warning (13410): Pin "tempout[116]" is stuck at GND
+    Warning (13410): Pin "tempout[117]" is stuck at GND
+    Warning (13410): Pin "tempout[118]" is stuck at GND
+    Warning (13410): Pin "tempout[119]" is stuck at GND
+    Warning (13410): Pin "tempout[120]" is stuck at VCC
+    Warning (13410): Pin "tempout[121]" is stuck at VCC
+    Warning (13410): Pin "tempout[122]" is stuck at VCC
+    Warning (13410): Pin "tempout[123]" is stuck at VCC
+    Warning (13410): Pin "tempout[124]" is stuck at VCC
+    Warning (13410): Pin "tempout[125]" is stuck at VCC
+    Warning (13410): Pin "tempout[126]" is stuck at VCC
+    Warning (13410): Pin "tempout[127]" is stuck at VCC
+Warning: Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk"
+Info: Implemented 129 device resources after synthesis - the final resource count might be different
+    Info: Implemented 1 input pins
+    Info: Implemented 128 output pins
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 132 warnings
+    Info: Peak virtual memory: 251 megabytes
+    Info: Processing ended: Fri Feb 15 18:47:45 2019
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:06
+
+

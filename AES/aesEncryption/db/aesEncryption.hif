@@ -1,0 +1,589 @@
+Quartus II
+Version 9.1 Build 222 10/21/2009 SJ Web Edition
+44
+3137
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+subBytes
+# storage
+db|aesEncryption.(3).cnf
+db|aesEncryption.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+module|aesencryption.v
+fd14a141cb1169fdb29b4dae65b18
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+aesCipher:u1|rounds:r1|subBytes:t1
+aesCipher:u1|rounds:r2|subBytes:t1
+aesCipher:u1|rounds:r3|subBytes:t1
+aesCipher:u1|rounds:r4|subBytes:t1
+aesCipher:u1|rounds:r5|subBytes:t1
+aesCipher:u1|rounds:r6|subBytes:t1
+aesCipher:u1|rounds:r7|subBytes:t1
+aesCipher:u1|rounds:r8|subBytes:t1
+aesCipher:u1|rounds:r9|subBytes:t1
+aesCipher:u1|rounndlast:r10|subBytes:t1
+}
+# macro_sequence
+
+# end
+# entity
+shiftRow
+# storage
+db|aesEncryption.(5).cnf
+db|aesEncryption.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+module|shiftrow.v
+3419d1bb445eaf75fcbbdbf334b62b0
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+aesCipher:u1|rounds:r1|shiftRow:t2
+aesCipher:u1|rounds:r2|shiftRow:t2
+aesCipher:u1|rounds:r3|shiftRow:t2
+aesCipher:u1|rounds:r4|shiftRow:t2
+aesCipher:u1|rounds:r5|shiftRow:t2
+aesCipher:u1|rounds:r6|shiftRow:t2
+aesCipher:u1|rounds:r7|shiftRow:t2
+aesCipher:u1|rounds:r8|shiftRow:t2
+aesCipher:u1|rounds:r9|shiftRow:t2
+aesCipher:u1|rounndlast:r10|shiftRow:t2
+}
+# macro_sequence
+
+# end
+# entity
+KeyGeneration
+# storage
+db|aesEncryption.(7).cnf
+db|aesEncryption.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+module|keygeneration.v
+b0518223994ed49d95d9915230b2f760
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+aesCipher:u1|KeyGeneration:k1
+aesCipher:u1|KeyGeneration:k2
+aesCipher:u1|KeyGeneration:k3
+aesCipher:u1|KeyGeneration:k4
+aesCipher:u1|KeyGeneration:k5
+aesCipher:u1|KeyGeneration:k6
+aesCipher:u1|KeyGeneration:k7
+aesCipher:u1|KeyGeneration:k8
+aesCipher:u1|KeyGeneration:k9
+aesCipher:u1|KeyGeneration:k10
+}
+# macro_sequence
+
+# end
+# entity
+sBox
+# storage
+db|aesEncryption.(2).cnf
+db|aesEncryption.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+module|sbox.v
+113ba77a1a2327a3b2965b4bbee5957
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+aesCipher:u1|KeyGeneration:k1|sBox:a1
+aesCipher:u1|KeyGeneration:k1|sBox:a2
+aesCipher:u1|KeyGeneration:k1|sBox:a3
+aesCipher:u1|KeyGeneration:k1|sBox:a4
+aesCipher:u1|KeyGeneration:k2|sBox:a1
+aesCipher:u1|KeyGeneration:k2|sBox:a2
+aesCipher:u1|KeyGeneration:k2|sBox:a3
+aesCipher:u1|KeyGeneration:k2|sBox:a4
+aesCipher:u1|KeyGeneration:k3|sBox:a1
+aesCipher:u1|KeyGeneration:k3|sBox:a2
+aesCipher:u1|KeyGeneration:k3|sBox:a3
+aesCipher:u1|KeyGeneration:k3|sBox:a4
+aesCipher:u1|KeyGeneration:k4|sBox:a1
+aesCipher:u1|KeyGeneration:k4|sBox:a2
+aesCipher:u1|KeyGeneration:k4|sBox:a3
+aesCipher:u1|KeyGeneration:k4|sBox:a4
+aesCipher:u1|KeyGeneration:k5|sBox:a1
+aesCipher:u1|KeyGeneration:k5|sBox:a2
+aesCipher:u1|KeyGeneration:k5|sBox:a3
+aesCipher:u1|KeyGeneration:k5|sBox:a4
+aesCipher:u1|KeyGeneration:k6|sBox:a1
+aesCipher:u1|KeyGeneration:k6|sBox:a2
+aesCipher:u1|KeyGeneration:k6|sBox:a3
+aesCipher:u1|KeyGeneration:k6|sBox:a4
+aesCipher:u1|KeyGeneration:k7|sBox:a1
+aesCipher:u1|KeyGeneration:k7|sBox:a2
+aesCipher:u1|KeyGeneration:k7|sBox:a3
+aesCipher:u1|KeyGeneration:k7|sBox:a4
+aesCipher:u1|KeyGeneration:k8|sBox:a1
+aesCipher:u1|KeyGeneration:k8|sBox:a2
+aesCipher:u1|KeyGeneration:k8|sBox:a3
+aesCipher:u1|KeyGeneration:k8|sBox:a4
+aesCipher:u1|KeyGeneration:k9|sBox:a1
+aesCipher:u1|KeyGeneration:k9|sBox:a2
+aesCipher:u1|KeyGeneration:k9|sBox:a3
+aesCipher:u1|KeyGeneration:k9|sBox:a4
+aesCipher:u1|KeyGeneration:k10|sBox:a1
+aesCipher:u1|KeyGeneration:k10|sBox:a2
+aesCipher:u1|KeyGeneration:k10|sBox:a3
+aesCipher:u1|KeyGeneration:k10|sBox:a4
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q0
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q1
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q2
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q3
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q4
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q5
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q6
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q7
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q8
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q9
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q10
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q11
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q12
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q13
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q14
+aesCipher:u1|rounds:r1|subBytes:t1|sBox:q16
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q0
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q1
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q2
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q3
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q4
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q5
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q6
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q7
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q8
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q9
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q10
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q11
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q12
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q13
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q14
+aesCipher:u1|rounds:r2|subBytes:t1|sBox:q16
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q0
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q1
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q2
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q3
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q4
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q5
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q6
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q7
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q8
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q9
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q10
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q11
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q12
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q13
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q14
+aesCipher:u1|rounds:r3|subBytes:t1|sBox:q16
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q0
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q1
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q2
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q3
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q4
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q5
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q6
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q7
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q8
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q9
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q10
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q11
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q12
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q13
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q14
+aesCipher:u1|rounds:r4|subBytes:t1|sBox:q16
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q0
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q1
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q2
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q3
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q4
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q5
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q6
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q7
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q8
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q9
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q10
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q11
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q12
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q13
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q14
+aesCipher:u1|rounds:r5|subBytes:t1|sBox:q16
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q0
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q1
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q2
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q3
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q4
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q5
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q6
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q7
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q8
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q9
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q10
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q11
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q12
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q13
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q14
+aesCipher:u1|rounds:r6|subBytes:t1|sBox:q16
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q0
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q1
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q2
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q3
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q4
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q5
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q6
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q7
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q8
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q9
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q10
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q11
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q12
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q13
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q14
+aesCipher:u1|rounds:r7|subBytes:t1|sBox:q16
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q0
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q1
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q2
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q3
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q4
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q5
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q6
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q7
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q8
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q9
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q10
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q11
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q12
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q13
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q14
+aesCipher:u1|rounds:r8|subBytes:t1|sBox:q16
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q0
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q1
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q2
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q3
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q4
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q5
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q6
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q7
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q8
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q9
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q10
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q11
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q12
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q13
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q14
+aesCipher:u1|rounds:r9|subBytes:t1|sBox:q16
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q0
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q1
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q2
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q3
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q4
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q5
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q6
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q7
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q8
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q9
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q10
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q11
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q12
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q13
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q14
+aesCipher:u1|rounndlast:r10|subBytes:t1|sBox:q16
+}
+# macro_sequence
+
+# end
+# entity
+mixColumn
+# storage
+db|aesEncryption.(8).cnf
+db|aesEncryption.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+module|mixcolumn.v
+cbc7a8f4b9a9b615dc4caaa2e848e322
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+aesCipher:u1|rounds:r1|mixColumn:t3
+aesCipher:u1|rounds:r2|mixColumn:t3
+aesCipher:u1|rounds:r3|mixColumn:t3
+aesCipher:u1|rounds:r4|mixColumn:t3
+aesCipher:u1|rounds:r5|mixColumn:t3
+aesCipher:u1|rounds:r6|mixColumn:t3
+aesCipher:u1|rounds:r7|mixColumn:t3
+aesCipher:u1|rounds:r8|mixColumn:t3
+aesCipher:u1|rounds:r9|mixColumn:t3
+}
+# macro_sequence
+
+# end
+# entity
+aesEncryption
+# storage
+db|aesEncryption.(0).cnf
+db|aesEncryption.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+aesencryption.v
+e682299b942dc6abbaf4442735897aa
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+rounndlast
+# storage
+db|aesEncryption.(6).cnf
+db|aesEncryption.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+module|rounndlast.v
+69fa1921517351bdeb593cf3e25c4eb
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+aesCipher:u1|rounndlast:r10
+}
+# macro_sequence
+
+# end
+# entity
+rounds
+# storage
+db|aesEncryption.(4).cnf
+db|aesEncryption.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+module|rounds.v
+9d7d6e109558fecffd77df47a229efbe
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+aesCipher:u1|rounds:r1
+aesCipher:u1|rounds:r2
+aesCipher:u1|rounds:r3
+aesCipher:u1|rounds:r4
+aesCipher:u1|rounds:r5
+aesCipher:u1|rounds:r6
+aesCipher:u1|rounds:r7
+aesCipher:u1|rounds:r8
+aesCipher:u1|rounds:r9
+}
+# macro_sequence
+
+# end
+# entity
+aesCipher
+# storage
+db|aesEncryption.(1).cnf
+db|aesEncryption.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+module|aescipher.v
+71b1e7c9ac7ecc546133d13773221c
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+aesCipher:u1
+}
+# macro_sequence
+
+# end
+# complete
+

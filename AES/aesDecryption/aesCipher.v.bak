@@ -1,0 +1,18 @@
+module aesCipher(clk,datain,key,dataout);
+
+	input clk;
+	input [127:0] datain;
+	input [127:0] key;
+	output[127:0] dataout;
+	wire [127:0] r0_out;
+	wire [127:0] r1_out;
+	wire [127:0] key1, key2;
+
+	KeyGeneration k1(.rc(4'b0000), .key(key), .keyout(key1)); 
+
+	assign dataout = datain ^ key1;
+	// rounds r1(.clk(clk),.data(r0_out),.keyin(key),.rndout(dataout));
+	// rounndlast r10(.clk(clk),.rin(r1_out),.keylastin(key1),.fout(dataout));
+	// rounds r10(.clk(clk),.data(r1_out),.keyin(key1),.rndout(dataout));
+    
+endmodule 
